@@ -21,6 +21,8 @@
  */
 #pragma once
 
+#define CONFIG_EXAMPLES_DIR "Creality/Ender-5/BigTreeTech SKR E3 Turbo with BLTouch"
+
 /**
  * Configuration_adv.h
  *
@@ -905,7 +907,7 @@
    * differs, a mode set eeprom write will be completed at initialization.
    * Use the option below to force an eeprom write to a V3.1 probe regardless.
    */
-  //#define BLTOUCH_SET_5V_MODE
+  #define BLTOUCH_SET_5V_MODE
 
   /**
    * Safety: Activate if connecting a probe with an unknown voltage mode.
@@ -941,7 +943,7 @@
   // Define probe X and Y positions for Z1, Z2 [, Z3 [, Z4]]
   // If not defined, probe limits will be used.
   // Override with 'M422 S<index> X<pos> Y<pos>'
-  //#define Z_STEPPER_ALIGN_XY { {  10, 190 }, { 100,  10 }, { 190, 190 } }
+  //#define Z_STEPPER_ALIGN_XY { {  10, 290 }, { 150,  10 }, { 290, 290 } }
 
   /**
    * Orientation for the automatically-calculated probe positions.
@@ -1048,7 +1050,7 @@
 #define DEFAULT_STEPPER_DEACTIVE_TIME 120
 #define DISABLE_INACTIVE_X true
 #define DISABLE_INACTIVE_Y true
-#define DISABLE_INACTIVE_Z false  // Set 'false' if the nozzle could fall onto your printed part!
+#define DISABLE_INACTIVE_Z true  // Set 'false' if the nozzle could fall onto your printed part!
 #define DISABLE_INACTIVE_I true
 #define DISABLE_INACTIVE_J true
 #define DISABLE_INACTIVE_K true
@@ -1739,10 +1741,10 @@
   //#define BOOT_MARLIN_LOGO_ANIMATED // Animated Marlin logo. Costs ~3260 (or ~940) bytes of PROGMEM.
 
   // Frivolous Game Options
-  #define MARLIN_BRICKOUT
-  #define MARLIN_INVADERS
-  #define MARLIN_SNAKE
-  #define GAMES_EASTER_EGG          // Add extra blank lines above the "Games" sub-menu
+  //#define MARLIN_BRICKOUT
+  //#define MARLIN_INVADERS
+  //#define MARLIN_SNAKE
+  //#define GAMES_EASTER_EGG          // Add extra blank lines above the "Games" sub-menu
 
 #endif // HAS_MARLINUI_U8GLIB
 
@@ -2714,7 +2716,7 @@
    */
   #define INTERPOLATE      true
 
- #if AXIS_IS_TMC(X)
+  #if AXIS_IS_TMC(X)
     #define X_CURRENT       580        // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_CURRENT_HOME  X_CURRENT  // (mA) RMS current for sensorless homing
     #define X_MICROSTEPS     16        // 0..256

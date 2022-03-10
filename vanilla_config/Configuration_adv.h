@@ -21,6 +21,8 @@
  */
 #pragma once
 
+#define CONFIG_EXAMPLES_DIR "Creality/Ender-5/CrealityV427"
+
 /**
  * Configuration_adv.h
  *
@@ -1739,10 +1741,10 @@
   //#define BOOT_MARLIN_LOGO_ANIMATED // Animated Marlin logo. Costs ~3260 (or ~940) bytes of PROGMEM.
 
   // Frivolous Game Options
-  #define MARLIN_BRICKOUT
-  #define MARLIN_INVADERS
-  #define MARLIN_SNAKE
-  #define GAMES_EASTER_EGG          // Add extra blank lines above the "Games" sub-menu
+  //#define MARLIN_BRICKOUT
+  //#define MARLIN_INVADERS
+  //#define MARLIN_SNAKE
+  //#define GAMES_EASTER_EGG          // Add extra blank lines above the "Games" sub-menu
 
 #endif // HAS_MARLINUI_U8GLIB
 
@@ -2714,7 +2716,7 @@
    */
   #define INTERPOLATE      true
 
- #if AXIS_IS_TMC(X)
+  #if AXIS_IS_TMC(X)
     #define X_CURRENT       580        // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_CURRENT_HOME  X_CURRENT  // (mA) RMS current for sensorless homing
     #define X_MICROSTEPS     16        // 0..256
